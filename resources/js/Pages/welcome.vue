@@ -6,8 +6,7 @@
     </div>
 </template>
 <script setup>
-import { Head } from '@inertiajs/inertia-vue3'
-import { Link } from '@inertiajs/inertia-vue3'
+import { Head, Link } from '@inertiajs/inertia-vue3'
 </script>
 <style lang="">
     
