@@ -1,5 +1,6 @@
 <?php
 
+use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
-});
+    sleep(1);
+    return Inertia::render('welcome');
+})->name('home');
+
+Route::get('/about', function () {
+    sleep(1);
+    return Inertia::render('about');
+})->name('about');
