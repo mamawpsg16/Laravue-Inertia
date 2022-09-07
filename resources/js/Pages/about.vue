@@ -1,13 +1,13 @@
-<template lang="">
-    <div>
-        <Head title="ABOUT" />
-        <p>ABOUT</p>
-        <Link :href="route('home')">HOME</Link>
-    </div>
-</template>
 <script setup>
 import { Head, Link } from '@inertiajs/inertia-vue3'
+import Authenticated from '../Layouts/Authenticated.vue'
 </script>
-<style lang="">
+<template lang="">
+        <div>
+            <Head title="About Us" />
+            <Authenticated>
+                <p>About Us</p>
+            </Authenticated>
+        </div>
+    </template>
     
-</style>

@@ -1,13 +1,13 @@
+<script setup>
+import { Head, Link } from '@inertiajs/inertia-vue3'
+import Authenticated from '../Layouts/Authenticated.vue'
+</script>
 <template lang="">
     <div>
         <Head title="HOME" />
-        <p>HOME</p>
-        <Link :href="route('about')">ABOUT</Link>
+        <Authenticated>
+            <p>HOME</p>
+            
+        </Authenticated>
     </div>
 </template>
-<script setup>
-import { Head, Link } from '@inertiajs/inertia-vue3'
-</script>
-<style lang="">
-    
-</style>

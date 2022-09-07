@@ -2,6 +2,7 @@
 
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +14,26 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/about', function () {
+        return Inertia::render('about');
+    })->name('about');
+    //Logout
+    Route::post('/logout',[UserController::class,'logout'])->name('auth.logout');
+});
+
 Route::get('/', function () {
-    sleep(1);
     return Inertia::render('welcome');
 })->name('home');
 
-Route::get('/about', function () {
-    sleep(1);
-    return Inertia::render('about');
-})->name('about');
+//Create New User 
+Route::post('/createUser',[UserController::class,'store'])->name('auth.store');
+//Show Register Form
+Route::get('/register',[UserController::class,'create'])->name('auth.create');
+
+//Show Login Form
+Route::get('/login',[UserController::class,'login'])->name('auth.login');
+//Authenticate User
+Route::post('/authenticate',[UserController::class,'authenticate'])->name('auth.authenticate');
