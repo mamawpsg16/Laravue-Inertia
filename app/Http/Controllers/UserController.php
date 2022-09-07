@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest', ['except' => ['logout']]);
+    }
     //Show Register Form
     public function create() {
         return Inertia::render('Auth/Register');
@@ -47,8 +51,8 @@ class UserController extends Controller
         //Check if info is correct & existing
         if(auth()->attempt($request->validated())) {
             $request->session()->regenerate();
-
-            return Redirect::route('home');
+            
+            return redirect()->intended('/');
         }
 
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');

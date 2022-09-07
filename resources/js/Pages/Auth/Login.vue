@@ -18,11 +18,11 @@ const form = useForm({
             <h2 class="text-2xl font-bold uppercase mb-1">Login</h2>
         </header>
         <form @submit.prevent="form.post(route('auth.authenticate'))">
-            <FormInput :error="form.errors.email" label="Email" placeholder="Enter your email" type="email"
+            <FormInput :error="form.errors.email" label="Email" id="email" placeholder="Enter your email" type="email"
                 v-model="form.email"></FormInput>
 
-            <FormInput :error="form.errors.password" label="Password" placeholder="Enter your password" type="password"
-                v-model="form.password"></FormInput>
+            <FormInput :error="form.errors.password" label="Password" id="password" placeholder="Enter your password"
+                type="password" v-model="form.password"></FormInput>
 
             <div class="mb-6">
                 <button class="text-white bg-gray-500 rounded py-2 px-4 hover:bg-gray-700" :disabled="form.processing">

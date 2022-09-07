@@ -19571,9 +19571,10 @@ __webpack_require__.r(__webpack_exports__);
     },
     type: String,
     error: {
-      type: Object,
+      type: [Object, String],
       "default": null
-    }
+    },
+    id: String
   },
   emits: ['update:modelValue'],
   setup: function setup(__props, _ref) {
@@ -19781,7 +19782,7 @@ __webpack_require__.r(__webpack_exports__);
           return form.reset();
         },
         onError: function onError(error) {
-          return console.log(error);
+          return null;
         }
       });
     };
@@ -19894,7 +19895,7 @@ var _hoisted_2 = {
   "for": "name",
   "class": "inline-block text-lg mb-2"
 };
-var _hoisted_3 = ["type", "placeholder", "value"];
+var _hoisted_3 = ["placeholder", "autocomplete", "name", "type", "value"];
 var _hoisted_4 = {
   key: 0,
   "class": "text-sm text-red-500"
@@ -19903,11 +19904,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.props.label), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: $setup.props.type,
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["border border-gray-200 rounded p-2 w-full", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([{
       'border-red-400': $props.error
-    }]),
+    }, "border border-gray-200 rounded p-2 w-full"]),
     placeholder: $props.placeholder,
+    autocomplete: $setup.props.id,
+    name: $setup.props.id,
+    type: $setup.props.type,
     value: $props.modelValue,
     onInput: _cache[0] || (_cache[0] = function ($event) {
       return _ctx.$emit('update:modelValue', $event.target.value);
@@ -20081,7 +20084,7 @@ var _hoisted_1 = {
   "class": "relative min-h-screen flex flex-col sm:items-center sm:pt-10 bg-gray-100"
 };
 var _hoisted_2 = {
-  "class": "w-full sm:max-w-md px-6 py-6 bg-white shadow-md overflow-hidden sm:rounded-lg"
+  "class": "w-full sm:max-w-md px-6 py-6 bg-white shadow-md overflow-hidden sm:m-10 sm:rounded-lg"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Navbar"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])])], 64
@@ -20139,6 +20142,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FormInput"], {
         error: $setup.form.errors.email,
         label: "Email",
+        id: "email",
         placeholder: "Enter your email",
         type: "email",
         modelValue: $setup.form.email,
@@ -20150,6 +20154,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       , ["error", "modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FormInput"], {
         error: $setup.form.errors.password,
         label: "Password",
+        id: "password",
         placeholder: "Enter your password",
         type: "password",
         modelValue: $setup.form.password,
@@ -20229,6 +20234,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FormInput"], {
         error: $setup.form.errors.name,
         label: "Full Name",
+        id: "name",
         placeholder: "Enter your name",
         type: "text",
         modelValue: $setup.form.name,
@@ -20240,6 +20246,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       , ["error", "modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FormInput"], {
         error: $setup.form.errors.email,
         label: "Email",
+        id: "email",
         placeholder: "Enter your email",
         type: "email",
         modelValue: $setup.form.email,
@@ -20251,6 +20258,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       , ["error", "modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FormInput"], {
         error: $setup.form.errors.password,
         label: "Password",
+        id: "password",
         placeholder: "Enter your password",
         type: "password",
         modelValue: $setup.form.password,
@@ -20261,6 +20269,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       /* PROPS */
       , ["error", "modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FormInput"], {
         error: $setup.form.errors.password_confirmation,
+        id: "password_confirmation",
         label: "Password Confirmation",
         placeholder: "Enter your password confirmation",
         type: "password",

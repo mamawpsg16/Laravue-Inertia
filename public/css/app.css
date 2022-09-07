@@ -639,18 +639,6 @@ video {
 .w-full {
   width: 100%;
 }
-.w-1\/5 {
-  width: 20%;
-}
-.w-2\/5 {
-  width: 40%;
-}
-.w-1\/6 {
-  width: 16.666667%;
-}
-.w-2\/6 {
-  width: 33.333333%;
-}
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -861,7 +849,11 @@ video {
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 }
-@media (min-width: 640px) {
+@media (min-width: 576px) {
+
+  .sm\:m-10 {
+    margin: 2.5rem;
+  }
 
   .sm\:ml-0 {
     margin-left: 0px;
